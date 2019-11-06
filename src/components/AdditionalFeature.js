@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'net';
 
 const AdditionalFeature = props => {
   return (
@@ -10,4 +11,9 @@ const AdditionalFeature = props => {
   );
 };
 
-export default AdditionalFeature;
+const mapDispatchToProps = {};
+
+export default connect(
+	state => state,
+	mapDispatchToProps
+)(AdditionalFeature);
