@@ -6,10 +6,10 @@ function clg(...x) {
 
 const AddedFeature = props => {
 
-	const handleButton = () => {
-		
-	}
-
+	// const handleButton = () => {
+	// }
+	
+	clg(props)
 	return (
 		<li>
 			{/* Add an onClick to run a function to remove a feature */}

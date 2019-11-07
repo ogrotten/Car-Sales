@@ -1,3 +1,5 @@
+import { ADD_FEATURE, REMV_FEATURE} from "../actions"
+
 function clg(...x) {
 	for (let exes of x) console.log(exes);
 }
@@ -5,7 +7,7 @@ function clg(...x) {
 export const reducer = (state = initialState, action) => {
 	clg(">>> Reducer: ", action);
 	switch (action.type) {
-		case "ADD_FEATURE":
+		case ADD_FEATURE:
 			clg(">>> Reducer: ADD");
 			// find from 33 addFs from action.payload.id
 			const NF = state.additionalFeatures.find(e => e.id === action.payload.id);
@@ -19,7 +21,7 @@ export const reducer = (state = initialState, action) => {
 				additionalPrice: (action.payload.price += state.additionalPrice)
 			};
 
-		case "REMV_FEATURE":
+		case REMV_FEATURE:
 			clg(">>> Reducer: REMOVE");
 			clg(action.payload);
 			return {
@@ -27,7 +29,7 @@ export const reducer = (state = initialState, action) => {
 				car: {
 					...state.car,
 					features: state.car.features.filter(feature => {
-						return feature.id != action.payload.id;
+						return feature.id !== action.payload.id;
 					})
 				},
 				additionalPrice: state.additionalPrice - action.payload.price,

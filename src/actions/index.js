@@ -6,6 +6,7 @@ export const addFeature = (X) => ({
 	payload: X
 })
 
-export const remvFeature = () => ({
-	type: REMV_FEATURE
+export const remvFeature = (X) => ({
+	type: REMV_FEATURE,
+	payload: X
 })
