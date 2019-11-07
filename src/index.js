@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { createStore } from "redux";
 
 import App from "./App";
+import {reducer} from "./reducers";
 
 import "bulma/css/bulma.css";
 import "./styles.scss";
@@ -12,10 +13,7 @@ import "./styles.scss";
 // temp to see the page again, remv later 
 // temp to see the page again, remv later 
 
-const reducer = () => {};
-const initialState = ""
-
-const store = createStore(reducer, initialState);
+const store = createStore(reducer);
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(

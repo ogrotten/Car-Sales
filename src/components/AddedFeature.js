@@ -1,5 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
+function clg(...x) {
+	for (let exes of x) console.log(exes);
+}
 
 const AddedFeature = props => {
   return (
@@ -11,9 +14,12 @@ const AddedFeature = props => {
   );
 };
 
-const mapDispatchToProps = {};
+// const mapStateToProps = state => ({feature: state.feature});
+// const mapDispatchToProps = {};
 
-export default connect(
-	state => ({feature: state.feature}),
-	mapDispatchToProps
-)(AddedFeature);
+// export default connect(
+// 	mapStateToProps,
+// 	mapDispatchToProps
+// )(AddedFeature);
+
+export default AddedFeature;
